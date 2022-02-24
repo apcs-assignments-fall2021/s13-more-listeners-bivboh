@@ -22,17 +22,18 @@ public class SudokuBoard {
         buttons = new SudokuButton[9][9];
 
         // Here is the code that we can use to make one row of 5 buttons:
-        JPanel rowPanel = new JPanel();
+        for (int row = 0; row < 9; row++) {
+            JPanel rowPanel = new JPanel();
 
-        for (int col = 0; col < 5; col++) {
-            SudokuButton currentButton = new SudokuButton();
-            rowPanel.add(currentButton);
-            buttons[0][col] = currentButton;
+            for (int col = 0; col < 9; col++) {
+                SudokuButton currentButton = new SudokuButton();
+                rowPanel.add(currentButton);
+                buttons[row][col] = currentButton;
+            }
+
+            rows[row] = rowPanel;
+            frame.add(rowPanel);
         }
-
-        rows[0] = rowPanel;
-        frame.add(rowPanel);
-
         // 4. Size the frame
         frame.pack();
 

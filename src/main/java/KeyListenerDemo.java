@@ -32,6 +32,13 @@ public class KeyListenerDemo {
             @Override
             public void keyPressed(KeyEvent e) {
                 field1.setText(e.getKeyCode() + "");
+                if (e.getKeyCode() == VK_E || e.getKeyCode() == VK_A ||e.getKeyCode() == VK_I ||e.getKeyCode() == VK_0 ||e.getKeyCode() == VK_U) {
+                    field1.setText("That is a vowel!");
+                }
+                else{
+                    field1.setText("That is not a vowel!");
+                }
+
             }
 
             @Override

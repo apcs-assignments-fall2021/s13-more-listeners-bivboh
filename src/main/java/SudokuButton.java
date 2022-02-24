@@ -19,6 +19,10 @@ public class SudokuButton extends JButton implements KeyListener {
     // when the key goes down
     @Override
     public void keyPressed(KeyEvent e) {
+        int code = e.getKeyCode();
+        if (code > '0' && code <= '9' ){
+            this.setText((code-'0') + "");
+        }
         // To interact with the current SudokuButton, use: this
         // For instance, if we wanted to get the text of the
         // current button, we'd say: this.getText()
@@ -27,6 +31,7 @@ public class SudokuButton extends JButton implements KeyListener {
     // when the key goes up
     @Override
     public void keyReleased(KeyEvent e) {
+
 
     }
 

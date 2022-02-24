@@ -36,6 +36,24 @@ public class DiagonalGame {
         panel1.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                int x = 0;
+                int y = 0;
+                int min = 500;
+                for (int d = 0; d < 500; d++){
+                    if (Math.abs(d - e.getX()) + Math.abs(d-e.getY()) < min){
+                        x = e.getX();
+                        y = e.getY();
+                        min = Math.abs(d-e.getX()) + Math.abs(d-e.getY());
+                    }
+
+                }
+                if (min > 20){
+                    field1.setText("You are not good");
+                }
+                else{
+                    field1.setText("good job");
+                }
+
 
             }
 
